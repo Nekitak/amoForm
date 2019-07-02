@@ -1,16 +1,13 @@
 <?php
 
  $link = 'https://' . $deal->subdomain . '.amocrm.ru/api/v2/contacts' ;
-/* Нам необходимо инициировать запрос к серверу. Воспользуемся библиотекой cURL (поставляется в составе PHP). Подробнее о
-работе с этой
-библиотекой Вы можете прочитать в мануале. */
-$curl = curl_init ( ) ; #Сохраняем дескриптор сеанса cURL
-#Устанавливаем необходимые опции для сеанса cURL
+
+$curl = curl_init () ; 
 curl_setopt ( $curl ,CURLOPT_RETURNTRANSFER, true ) ;
 curl_setopt ( $curl ,CURLOPT_USERAGENT, 'amoCRM-API-client/1.0' ) ;
 curl_setopt ( $curl ,CURLOPT_URL, $link ) ;
 curl_setopt ( $curl ,CURLOPT_CUSTOMREQUEST, 'POST' ) ;
-curl_setopt ( $curl ,CURLOPT_POSTFIELDS, json_encode ( $contacts ) ) ;
+curl_setopt ( $curl ,CURLOPT_POSTFIELDS, json_encode ($contacts) ) ;
 curl_setopt ( $curl ,CURLOPT_HTTPHEADER, array ( 'Content-Type: application/json' ) ) ;
 curl_setopt ( $curl ,CURLOPT_HEADER, false ) ;
 curl_setopt ( $curl ,CURLOPT_COOKIEFILE, dirname ( __DIR__ ) . '/cookie.txt' ) ; #PHP>5.3.6 dirname(__FILE__) -> __DIR__

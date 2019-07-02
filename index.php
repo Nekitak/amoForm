@@ -3,24 +3,31 @@
  <?php require_once('core/mainScript.php'); ?>
 <html>
 <head>
+    <meta charset="utf-8">
+    <link href="../web/css/main.css" rel="stylesheet">
+    <link href="../web/css/shrift.css" rel="stylesheet">
 	<title>Scipitrs</title>
 </head>
 <body>
     
     
+   <div class="form">
+        <form action="#" method="POST" class="send_form">
+            
    
-    <form action="#" method="POST">
-        <strong>Создать новую сделку</strong>
-        <p>Название сделки</p>
-        <input type="text" name="deal_name"><br/>
-        <p>Бюджет</p>
-        <input type="text" name="price"><br/>
-        <p>Имя и фамилия контакта</p>
-        <input type="text" name="contact_name"><br/><br/>
-        <input type="submit" name="submit" value="Создать">
-        
-    </form>
-    
+            <input class="input" type="text" name="FIO" placeholder="ФИО"  ><br/>
+  
+            <input  class="input" type="text" name="Mobile_Fone" placeholder="Телефон"><br/>
+ 
+            <input  class="input" type="text" name="Email" placeholder="Email"><br/>
+<!--             <input  class="input" type="text" name="Email" placeholder="Название сделки"><br/>
+             <input  class="input" type="text" name="Email" placeholder="Бюджет сделки"><br/>
+              -->
+              <div class="stabilize_1">  создать и прикрепить сделку <input class="input_checkbox" type="checkbox" name="tie_leads"> </div>
+
+            <input  class="input" type="submit" name="submit" value="Создать">       
+        </form>
+    </div>
   
 </body>
 </html>

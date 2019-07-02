@@ -86,7 +86,7 @@ class Deals
     }
     
     /*return array with params for create new contact*/
-    public static function newContact($id)
+    public static function newContact($id = '0')
     {
         $id = intval($id);
        if(!empty($_POST))
@@ -94,14 +94,33 @@ class Deals
         return 
            array(
                  array (
-                    'name' => $_POST['contact_name'] ,
-                    'responsible_user_id' => 504141 ,
-                    'created_by' => 504141 ,
-                    'created_at' => time(),
-                    'leads_id' => array(
-                       $id  
-                    ),
-                    'company_id' => 30615 ,
+                        'name' => $_POST['FIO'] ,
+                        'created_at' => time(),
+                        'created_by' => 504141 ,
+                        'responsible_user_id' => 504141 ,
+                         'leads_id' => array(
+                           $id  
+                        ),
+                         'custom_fields' => array(
+                                                array(
+                                                    'id' => 4396818,
+                                                    'values' => array(
+                                                        array(
+                                                            'value' => $_POST['Mobile_Fone'],
+                                                            'enum' => "MOB",
+                                                        ),
+                                                    ),
+                                                ),
+                                                array(
+                                                    'id' => 4396819,
+                                                    'values' => array(
+                                                        array(
+                                                            'value' => $_POST['Email'],
+                                                            'enum' => "WORK",
+                                                        ),
+                                                    ),
+                                                ),
+                             ),
                     )          
                 );  
        } 
