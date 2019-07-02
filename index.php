@@ -20,10 +20,10 @@
             <input  class="input" type="text" name="Mobile_Fone" placeholder="Телефон"><br/>
  
             <input  class="input" type="text" name="Email" placeholder="Email"><br/>
-<!--             <input  class="input" type="text" name="Email" placeholder="Название сделки"><br/>
-             <input  class="input" type="text" name="Email" placeholder="Бюджет сделки"><br/>
-              -->
-              <div class="stabilize_1">  создать и прикрепить сделку <input class="input_checkbox" type="checkbox" name="tie_leads"> </div>
+             <input  class="input" type="text" name="deal_name" placeholder="Название сделки"><br/>
+             <input  class="input" type="text" name="budget" placeholder="Бюджет сделки"><br/>
+              
+              <div class="stabilize_1"> прикрепить сделку <input class="input_checkbox" type="checkbox" name="tie_leads"> </div>
 
             <input  class="input" type="submit" name="submit" value="Создать">       
         </form>

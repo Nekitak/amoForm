@@ -1,7 +1,7 @@
 <?php
 
 
-$link = 'https://' . $deal->subdomain . '.amocrm.ru/api/v2/leads?filter%5Bactive%5D=1&query=TestDeal';
+$link = 'https://' . $deal->subdomain . '.amocrm.ru/api/v2/leads?filter%5Bactive%5D=1&query=' . $requestParam;
 
 
   $curl = curl_init ( ) ;

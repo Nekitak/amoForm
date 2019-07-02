@@ -64,23 +64,23 @@ class Deals
     {
        if(!empty($_POST))
        {
-        return 
-           array(
-                array(
-                    'name' => $_POST['deal_name'] ,
-                    'created_at' => time() ,
-                    'status_id' => 7087609 ,
-                    'sale' => $_POST['price'] ,
-                    'responsible_user_id' => 215309 ,
-                    'custom_fields' => array(
+            return 
+               array(
                     array(
-                        #Нестандартное дополнительное поле типа "мультисписок", которое мы создали
-                       'id' => 426106 ,
+                        'name' => $_POST['deal_name'] ,
+                        'created_at' => time() ,
+                        'status_id' => 7087609 ,
+                        'sale' => $_POST['budget'] ,
+                        'responsible_user_id' => 215309 ,
+                        'custom_fields' => array(
+                        array(
 
+                           'id' => 426106 ,
+
+                        )
                     )
-                )
-            )          
-        );  
+                )          
+            );  
        } 
        
     }
@@ -102,29 +102,42 @@ class Deals
                            $id  
                         ),
                          'custom_fields' => array(
-                                                array(
-                                                    'id' => 4396818,
-                                                    'values' => array(
-                                                        array(
-                                                            'value' => $_POST['Mobile_Fone'],
-                                                            'enum' => "MOB",
+                                                    array(
+                                                        'id' => 416853,
+                                                        'values' => array(
+                                                            array(
+                                                                'value' => $_POST['Mobile_Fone'],
+                                                                'enum' => "MOB",
+                                                            ),
+                                                        ),
+                                                    ),
+                                                    array(
+                                                        'id' => 416855,
+                                                        'values' => array(
+                                                            array(
+                                                                'value' => $_POST['Email'],
+                                                                'enum' => "WORK",
+                                                            ),
                                                         ),
                                                     ),
                                                 ),
-                                                array(
-                                                    'id' => 4396819,
-                                                    'values' => array(
-                                                        array(
-                                                            'value' => $_POST['Email'],
-                                                            'enum' => "WORK",
-                                                        ),
-                                                    ),
-                                                ),
-                             ),
-                    )          
+                        )             
                 );  
-       } 
-       
+       }      
+    }
+    
+    public static function addTask($id)
+    {
+       return array(
+                array(
+                    'element_id' => $id, #ID сделки
+                    'element_type' => 2, #Показываем, что это - сделка, а не контакт
+                    'task_type' => 1, #Звонок
+                    'text' => 'Связаться с клиентом ',
+                    'responsible_user_id' => 109999,
+                    'complete_till_at' => 1375285346,
+                ),
+           );
     }
     
 }
